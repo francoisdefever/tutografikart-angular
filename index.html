@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Grafikart</title>
-    </head>
-    <body ng-app>
 
-        <input type="text" ng-model="task"/>
+<head>
+    <meta charset="utf-8">
+    <title>Grafikart</title>
+</head>
 
-        <div ng-init="users=['Ber', 'Vince', 'Fan']">
-            <ul>
-                <li ng-repeat="user in users">{{user | uppercase}}</li>
-            </ul>
-            {{users | filter: 'B'}}
-        </div>
+<body ng-app>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    </body>
+    <h2>Example Input</h2>
+    <input type="text" ng-model="task" />
+
+    <h2>Example Array Without Filter</h2>
+    <div ng-init="users=['Ber', 'Vince', 'Fan']">
+        <ul>
+            <li ng-repeat="user in users">{{user | uppercase}}</li>
+        </ul>
+    </div>
+
+    <h2>Example Array With Filter By "n"</h2>
+    <div ng-init="users=['Ber', 'Vince', 'Fan']">
+        <ul>
+            <li ng-repeat="user in users | filter: 'n'">{{user | uppercase}}</li>
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+</body>
+
 </html>

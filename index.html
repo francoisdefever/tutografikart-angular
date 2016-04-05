@@ -16,9 +16,12 @@
     </select>
 
     <div ng-init="users=[{username:'Ber', content: 'Salut les gens'}, {username: 'Vince', content: 'Je vais avoir des pneus tous neuf'}, {username: 'Fan', content: 'Je vais commencer un nouveau job'}]">
-        <ul>
-            <li ng-repeat="user in users | filter: query | orderBy: order">{{user | uppercase}}</li>
-        </ul>
+        <div ng-repeat="user in users | filter:{content: query} | orderBy: order">
+            <p>
+                <strong>{{user.username}}</strong><br>
+                {{user.content}}
+            </p>
+        </div>
     </div>
 
     <!-- <h2>Example Array With Filter By Query</h2>

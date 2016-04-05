@@ -5,12 +5,12 @@
         <title>Grafikart</title>
     </head>
     <body ng-app>
-        
+
         <input type="text" ng-model="task"/>
 
         <div ng-init="users=['Ber', 'Vince', 'Fan']">
             <ul>
-                <li ng-repeat="user in users">{{user}}</li>
+                <li ng-repeat="user in users">{{user | uppercase}}</li>
             </ul>
         </div>
 

@@ -8,11 +8,22 @@
 
 <body ng-app>
 
-    <h2>Example Input</h2>
+    <h2>Filter orderBy</h2>
+    <input type="text" ng-model="query" />
+    <select ng-model="order">
+        <option value="username">Organiser par nom</option>
+        <option value="content">Organiser par contenu</option>
+    </select>
+
+    <div ng-init="users=[{username:'Ber', content: 'Salut les gens'}, {username: 'Vince', content: 'Je vais avoir des pneus tous neuf'}, {username: 'Fan', content: 'Je vais commencer un nouveau job'}]">
+        <ul>
+            <li ng-repeat="user in users | filter: query | orderBy: order">{{user | uppercase}}</li>
+        </ul>
+    </div>
+
+    <!-- <h2>Example Array With Filter By Query</h2>
     <input type="text" ng-model="query" />
 
-
-    <h2>Example Array With Filter By Query</h2>
     <div ng-init="users=['Ber', 'Vince', 'Fan']">
         <ul>
             <li ng-repeat="user in users | filter: query">{{user | uppercase}}</li>
@@ -32,6 +43,9 @@
             <li ng-repeat="user in users">{{user | uppercase}}</li>
         </ul>
     </div>
+
+    <h2>Example Input</h2>
+    <input type="text" ng-model="query" /> -->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>

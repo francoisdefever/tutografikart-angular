@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Grafikart</title>
+</head>
+
+<body ng-app>
+
+    <h2>Filter orderBy</h2>
+    <input type="text" ng-model="query" />
+    <select ng-model="order">
+        <option value="username">Organiser par nom</option>
+        <option value="content">Organiser par contenu</option>
+    </select>
+
+    <div ng-init="comments=[{username:'Ber', content: 'Salut les gens'}, {username: 'Vince', content: 'Je vais avoir des pneus tous neuf'}, {username: 'Fan', content: 'Je vais commencer un nouveau job'}]">
+        <div ng-repeat="comment in comments | filter:{content: query} | orderBy: order">
+            <p>
+                <strong>{{comment.username}}</strong>
+                <br> {{comment.content}}
+            </p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script>
+        function CommentsCtrl($scope) {
+            $scope.comments = [{
+                "username": "<ReferenceError: firstname is not defined>",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "rosalyntorres@limozen.com",
+                "content": "Irure exercitation laborum id anim enim pariatur officia reprehenderit fugiat consectetur elit adipisicing non officia. Culpa pariatur sint reprehenderit ad pariatur occaecat pariatur enim elit dolore ut. Aliquip ad et excepteur adipisicing enim in do amet magna reprehenderit veniam labore mollit ipsum. Laborum Lorem velit consequat ut consectetur proident. Aute cupidatat in sunt nulla cillum veniam eiusmod cupidatat officia dolor officia."
+            }, {
+                "username": "<ReferenceError: firstname is not defined>",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "rosalyntorres@limozen.com",
+                "content": "Et ea eu dolore occaecat Lorem et do elit laboris. Consectetur ullamco mollit nulla eiusmod est elit. Occaecat voluptate magna duis fugiat eiusmod ea. Commodo in est in amet enim excepteur. Sunt ea ad ad labore cupidatat est proident irure duis."
+            }, {
+                "username": "<ReferenceError: firstname is not defined>",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "rosalyntorres@limozen.com",
+                "content": "Laboris Lorem aute et voluptate tempor minim fugiat ad irure consectetur ullamco nisi. Magna ad proident laborum deserunt. Amet nostrud cillum proident sunt. Ex mollit ipsum consectetur proident laboris ex eiusmod anim ad commodo. Culpa deserunt voluptate dolore Lorem duis culpa nulla."
+            }, {
+                "username": "<ReferenceError: firstname is not defined>",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "rosalyntorres@limozen.com",
+                "content": "Fugiat Lorem incididunt do aliqua occaecat. Duis in qui magna est enim eu commodo enim quis sit ut quis. Eiusmod laborum esse proident incididunt irure laboris et ipsum incididunt sint veniam ut nulla minim. Cupidatat nulla sint occaecat minim occaecat. Do laborum sint commodo ut tempor."
+            }, {
+                "username": "<ReferenceError: firstname is not defined>",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "rosalyntorres@limozen.com",
+                "content": "Veniam veniam aliqua do deserunt labore non nisi adipisicing nostrud pariatur officia cupidatat fugiat velit. Non aliqua et exercitation sit incididunt nisi esse voluptate. Proident adipisicing reprehenderit incididunt velit eu reprehenderit elit ex nostrud eu elit. Dolor cillum tempor amet esse ut esse mollit commodo esse tempor. Cillum aliqua consequat ipsum id."
+            }, {
+                "username": "<ReferenceError: firstname is not defined>",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "rosalyntorres@limozen.com",
+                "content": "Lorem aute quis anim occaecat eu qui eu ex amet occaecat qui. Et reprehenderit cillum non commodo sunt duis aliqua veniam ad. Ad minim tempor Lorem laborum ad aute. Culpa id et cupidatat adipisicing officia id fugiat amet. Fugiat cupidatat fugiat labore cupidatat pariatur sunt."
+            }, {
+                "username": "<ReferenceError: firstname is not defined>",
+                "city": "function (){return c.getItem(\"cities\")}",
+                "email": "rosalyntorres@limozen.com",
+                "content": "Cillum officia culpa ullamco cillum culpa enim quis culpa voluptate est dolor quis. Do officia consectetur laboris eiusmod ullamco amet. Consequat officia excepteur ea labore deserunt fugiat. Eiusmod nulla dolor exercitation laboris ullamco aliquip nisi qui pariatur aute laboris laboris sint incididunt. Laboris in ea aliquip ad tempor non cillum aliqua ullamco veniam proident Lorem qui."
+            }]
+        }
+    </script>
+</body>
+
+</html>
